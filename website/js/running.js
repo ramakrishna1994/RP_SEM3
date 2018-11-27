@@ -1,7 +1,7 @@
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
-    file = "./logs/dirlist_"+file+".txt";
+    file = "logs/dirlist_"+file+".txt";
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function ()
     {
@@ -23,7 +23,7 @@ function getpids()
     $(document).ready(function(){
             
         $.ajax({
-            url: "cgi-bin/getrunningpids.py.py",// give your url
+            url: "cgi-bin/getrunningpids.py",// give your url
             type: "POST",
             dataType: 'json',
             processData: false,
@@ -34,7 +34,7 @@ function getpids()
                 for(var i=0;i<response.length-1;i++)
                 {
                     innerhtml += '<div class="alert alert-'+colors[i%colors.length]+' col-sm-1 " style="cursor: pointer;margin:5px" onclick="readTextFile('+response[i]+')">'
-                                 + '<p >'+response[i]+'</p>'
+                                 + '<p class="blink">'+response[i]+'</p>'
                                 +'</div>';
                                 
                     
