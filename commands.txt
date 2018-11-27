@@ -1,0 +1,3 @@
+gcc thread.c -o thread -l pthread `mysql_config --cflags --libs`
+
+gcc not.c -o not -l pthread `mysql_config --cflags --libs`
