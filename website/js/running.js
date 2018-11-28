@@ -14,7 +14,7 @@ function getpids()
             success: function (response) 
             {
                 var innerhtml = ''
-                for(var i=0;i<response.length-1;i++)
+                for(var i=0;i<response.length;i++)
                 {
                     innerhtml += '<div class="alert alert-'+colors[i%colors.length]+' col-sm-1 " style="cursor: pointer;margin:5px" onclick="window.open(\'pid.html?pid='+response[i]+'\')">'
                                  + '<p class="blink">'+response[i]+'</p>'

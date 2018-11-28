@@ -1,5 +1,6 @@
     var linelbls = []
                         var linedt =  []
+
 var ctx1 = document.getElementById('lineChart').getContext('2d');
     function line()
     {
@@ -207,6 +208,39 @@ var ctx1 = document.getElementById('lineChart').getContext('2d');
     }
     */
 
+function getfileStatus()
+{
+    document.getElementById('alertbox').innerHTML = ""
+       
+        $(document).ready(function(){
+                    
+                $.ajax({
+                    url: "cgi-bin/filestatus.py",// give your url
+                    type: "POST",
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (response) 
+                    {
+                        var innerhtml = ""
+                        for(var i=0;i<response.length;i++)
+                        {
+                                         
+                                innerhtml +=' <div class="alert alert-danger"><center>'
+                                            +'Malcious Activity!!<br>  File name : <strong>'+response[i].file
+                                            +' </strong> is being modified by Process ID : <strong>'+response[i].pid
+                                            +'</strong></center> </div> '
+                                
+                        }
+                        document.getElementById('alertbox').innerHTML = innerhtml;
+                        
+                        
+                    }
+                });
+            });
+}
+
     line()
     pie()
     filltable()
+    setInterval("getfileStatus()", 2000);

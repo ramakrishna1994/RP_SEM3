@@ -25,3 +25,9 @@ create table top5pidswithtop5systemcalls(
    cnt int ,
    PRIMARY KEY ( pid )
 );
+
+create table files(
+   id INT NOT NULL AUTO_INCREMENT,
+   filename text NOT NULL,
+   PRIMARY KEY ( id )
+);

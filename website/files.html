@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Process ID Strace</title>
+  <title>PATTERNS</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
- 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+  
 </head>
 <body>
-  <div class="container-fluid">
-  <center><h1 id='h'></h1></center>
-  
+
+<div class="container-fluid">
+  <h1>&nbsp;</h1>
   <div class="row">
     <div class="col-sm-2" >
       <img src="images/pi.jpg" class="img-rounded" alt="Cinque Terre" style="width:100%">
@@ -23,19 +25,44 @@
       <button type="button" class="btn btn-primary btn-block" onclick="window.open('ended.html')">ENDED PROCESSES</button>
       <button type="button" class="btn btn-primary btn-block" onclick="window.open('files.html')">INSERT PATTERNS</button>
     </div>
-    <div class="col-sm-10" id="pidtable">
+    <div class="col-sm-10">
       
         <div class="row">
-            <canvas id="linechart"></canvas>    
-        </div>
+          
+            <div class="form-group">
+              <label for="pattern">Enter Pattern or File Name:</label>
+              <input type="text" class="form-control" id="pattern">
+          
+            </div>
+
+          <button type="button" class="btn btn-primary btn-block" onclick="addpattern()">Add Pattern</button>
+          
+         </div>   
+         <br>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>S.No</th>
+                        <th>Pattern</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbl">
+                     
+                    </tbody>
+                  </table>  
+            </div>
+            
+          </div>
+    
+ 
         
-        <div class="row" id="strace">
-        </div>
         
     </div>
   </div>
 </div>
-  
-<script type="text/javascript" src="js/pid.js"></script>
+    <script type="text/javascript" src="js/file.js"></script>
 </body>
 </html>

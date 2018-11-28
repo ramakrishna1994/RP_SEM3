@@ -2,7 +2,7 @@ import os
 import mysql.connector
 import json
 
-files = os.listdir("logs")
+files = os.listdir("logs1")
 
 mydb = mysql.connector.connect(
   host="localhost",
@@ -21,7 +21,7 @@ for file in files:
 	print file
 	pid = file.split('.')[0].split('_')[1]
 	print pid
-	with open('logs/'+file) as f:
+	with open('logs1/'+file) as f:
 	    lines = f.readlines()
 	    for line in lines:
 	    	print line.strip() + ' ' + pid.strip()

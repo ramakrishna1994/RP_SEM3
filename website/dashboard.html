@@ -16,7 +16,12 @@
 
 <div class="container-fluid">
   <center><h1>Real Time Analysis</h1></center>
-  
+  <div class="row" >
+  	<div class="col-sm-10 col-sm-offset-1" >
+  		<!----------Dynamically filled alertboxes------>	
+  	</div>
+  	
+  </div>
   <div class="row">
     <div class="col-sm-2" >
       <img src="images/pi.jpg" class="img-rounded" alt="Cinque Terre" style="width:100%">
@@ -24,6 +29,7 @@
       <button type="button" class="btn btn-primary btn-block" onclick="window.open('dashboard.html')">DASHBOARD</button>
       <button type="button" class="btn btn-primary btn-block" onclick="window.open('running.html')">RUNNING PROCESSES</button>
       <button type="button" class="btn btn-primary btn-block" onclick="window.open('ended.html')">ENDED PROCESSES</button>
+      <button type="button" class="btn btn-primary btn-block" onclick="window.open('files.html')">INSERT PATTERNS</button>
     </div>
     <div class="col-sm-10" id="pidtable">
       
@@ -51,12 +57,12 @@
   </div>
 <br>
   <div class="row">
-          <div class="col-sm-6" style="height: 350px;width: 350px">
+          <div class="col-sm-5" style="height: 350px;width: 350px">
             <canvas id="doughChart" ></canvas>
           </div>
 
-           <div class="col-sm-6" style="height: 350px;width: 350px">
-            <canvas id="radarChart" ></canvas>
+           <div class="col-sm-6 col-sm-offset-1"  id="alertbox">
+            
           </div>
          
       </div>
