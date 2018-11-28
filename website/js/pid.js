@@ -15,7 +15,7 @@ function readTextFile(file)
             {
                 var allText = rawFile.responseText;
                 document.getElementById('strace').innerHTML = allText;
-                alert(allText)
+                
             }
         }
     }
